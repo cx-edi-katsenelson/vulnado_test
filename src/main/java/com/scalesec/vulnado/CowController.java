@@ -1,15 +1,14 @@
 package com.scalesec.vulnado;
 
 import org.springframework.web.bind.annotation.*;
-import org.springframework.boot.autoconfigure.*;
-
-import java.io.Serializable;
 
 @RestController
-@EnableAutoConfiguration
+@RequestMapping("/api")
 public class CowController {
-    @RequestMapping(value = "/cowsay")
-    String cowsay(@RequestParam(defaultValue = "I love Linux!") String input) {
-        return Cowsay.run(input);
-    }
+  private Cowsay cowsay = new Cowsay();
+
+  @GetMapping("/cowsay")
+  public String cowsay(@RequestParam String input) {
+    return cowsay.run(input);
+  }
 }
