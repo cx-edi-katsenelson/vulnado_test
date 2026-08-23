@@ -1,4 +1,4 @@
 FROM wordpress:4.9.8-apache
 ENV WORDPRESS_DB_PASSWORD=weakpassword
 
-FROM ghcr.io/zaproxy/zaproxy:sha256-c8cf17985d601839821dfd2390cec3aca2158877fb2bd43260e848b18b0707699
+FROM ghcr.io/zaproxy/zaproxy:stable
